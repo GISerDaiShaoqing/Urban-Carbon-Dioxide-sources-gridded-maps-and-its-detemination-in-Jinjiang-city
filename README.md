@@ -30,15 +30,15 @@ We built a spatial database Carbon Dioxide emissions and urban form fragmentatio
 If you find this data useful in your work, please consider citing:
 
 ```
-@dataset{shaoqing_dai_2019_3565511,
-  author       = {Shaoqing Dai, Shudi Zuo, Yin Ren},
-  title        = {{GISerDaiShaoqing/Mapping-Urban-Carbon-Dioxide-Sources-in-Jinjiang 0.2}},
-  month        = dec,
-  year         = 2019,
-  publisher    = {Zenodo},
-  version      = {0.1},
-  doi          = {10.5281/zenodo.3565316},
-  url          = {https://doi.org/10.5281/zenodo.3565316}
+@dataset{shaoqing_dai_2019_3566073,
+  author = {Shaoqing Dai, Shudi Zuo, Yin Ren},
+  title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city-0.2}},
+  month = dec,
+  year = 2019,
+  publisher = {Zenodo},
+  version = {0.2},
+  doi = {10.5281/zenodo.3566072},
+  url = {https://doi.org/10.5281/zenodo.3566072}
 }
 ```
 
