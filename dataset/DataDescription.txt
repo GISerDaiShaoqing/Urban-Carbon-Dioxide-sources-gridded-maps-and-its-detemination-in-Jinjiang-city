@@ -1,0 +1,25 @@
+Data Description
+CO30.tif:         Carbon Dioxide emissions gridded map at 30 m
+CO500.tif:        Carbon Dioxide emissions gridded map at 500 m
+COI30.tif:        Industrial Carbon Dioxide emissions gridded map at 30 m
+COI500.tif:       Industrial Carbon Dioxide emissions gridded map at 500 m
+COR30.tif:        Residential Carbon Dioxide emissions gridded map at 30 m
+COR500.tif:       Residential Carbon Dioxide emissions gridded map at 500 m
+COT30.tif:        Transport Carbon Dioxide emissions gridded map at 30 m
+COT500.tif:       Transport Carbon Dioxide emissions gridded map at 500 m
+division30.tif:   DIVISION at 30 m
+division500.tif:  DIVISION at 500 m
+mesh30.tif:       MESH at 30 m
+mesh500.tif:      MESH at 500 m
+np30.tif:         NP at 30 m
+np500.tif:        NP at 500 m
+pd30.tif:         PD at 30 m
+pd500.tif:        PD at 500 m
+PUA30.tif:        Proportion of urban area (PUA) at 30 m
+PUA500.tif:       Proportion of urban area (PUA) at 500 m
+POID30.tif:       Point of interest density (POID) at 30 m
+POID500.tif:      Point of interest density (POID) at 500 m
+fcmix30.tif:      The mixing degree of urban functional district (UFD) at 30 m
+fcmix500.tif:     The mixing degree of urban functional district (UFD) at 500 m
+LCU30.txt:        The Lacunarity indices at 30 m
+LCU500.txt:       The Lacunarity indices at 500 m

@@ -1,0 +1,266 @@
+---
+title: A spatial database of $CO_2$ emissions and urban form fragmentation for the
+  low carbon urban system in Jinjiang city, China
+csl: chinese-gb7714-1987-numeric.csl
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  html_notebook:
+    toc: yes
+bibliography: CEMU.bib
+---
+
+# Introduction
+
+A spatial database of low carbon urban system represented the spatial distribution maps of $CO_2$ emissions, urban form metrics (urban landscape fragmentation), proportion of urban area (PUA) and points of interest density (POID) at two resolutions: 30 m ($R_{30m}$) and 500 m ($R_{500m}$) in Jinjiang city, China. The data were produced from ArcGIS 10.2, Apack 2.23, Fragstats 4.2 and R 3.5.3. All the data were stored in Geotiff format.
+
+The names ofcorresponding spatial data of Geotiff files given in the [ReadMe.txt](http://science.gisersqdai.top/DIB/DataDescription.txt).
+
+# Database
+
+## Spatial distribution maps of $CO_2$ emissions
+### 30 m resolution maps
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(raster)
+library(leafsync)
+library(mapview)
+
+COP30 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COP30.tif")
+COI30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COI30.tif")
+COT30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COT30.tif")
+CO30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/CO30.tif")
+
+m1 <- mapview(CO30, layer.name = "Total")
+m2 <- mapview(COP30, layer.name = "Resident")
+m3 <- mapview(COI30, layer.name = "Industry")
+m4 <- mapview(COT30, layer.name = "Transport")
+sync(m1, m2, m3, m4)
+```
+
+Download links as follow:
+
+"Total", "Resident", "Industry" and "Transport" represent the total, resident, industrial, and Transport $CO_2$ emissions in Jinjiang City respectively. 
+
+[Total](http://science.gisersqdai.top/DIB/CO30.tif)
+
+[Resident](http://science.gisersqdai.top/DIB/COR30.tif)
+
+[Industry](http://science.gisersqdai.top/DIB/COI30.tif)
+
+[Transport](http://science.gisersqdai.top/DIB/COT30.tif)
+
+
+### 500 m resolution maps
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+COP500 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COP500.tif")
+COI500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COI500.tif")
+COT500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COT500.tif")
+CO500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/CO500.tif")
+
+m5 <- mapview(CO500, layer.name = "Total")
+m6 <- mapview(COP500, layer.name = "Resident")
+m7 <- mapview(COI500, layer.name = "Industry")
+m8 <- mapview(COT500, layer.name = "Transport")
+
+sync(m5, m6, m7, m8)
+```
+
+Download links as follow:
+
+"Total", "Resident", "Industry" and "Transport" represent the total, resident, industrial, and Transport $CO_2$ emissions in Jinjiang City respectively. 
+
+[Total](http://science.gisersqdai.top/DIB/CO500.tif)
+
+[Resident](http://science.gisersqdai.top/DIB/COR500.tif)
+
+[Industry](http://science.gisersqdai.top/DIB/COI500.tif)
+
+[Transport](http://science.gisersqdai.top/DIB/COT500.tif)
+
+## The mixing degree of urban functional district (UFD)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+fcmix30 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/mixed/planningfunctionmix.tif")
+fcmix500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/mixed/functionmix500m.tif")
+
+m9 <- mapview(fcmix30*100, layer.name = "R 30 m/percentage")
+m10 <- mapview(fcmix500*100, layer.name = "R 500 m/percentage")
+
+sync(m9, m10)
+```
+
+Download links as follow:
+
+[R 30 m](http://science.gisersqdai.top/DIB/fcmix30.tif)
+[R 500 m](http://science.gisersqdai.top/DIB/fcmix500.tif)
+
+## Lacunarity indices
+We used Apack 2.23 calculated the Lacunarity indicies. 
+
+```{r echo=FALSE, fig.height=5, fig.width=8, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(ggplot2)
+library(ggthemr)
+library(gridExtra)
+
+windowsFonts(RT = windowsFont("Times New Roman"))
+
+LCU<-read.table("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Scale/LCU.txt",sep="")
+lftype1<-c("Land use patches","Functional district patches")
+lftype1<-rep(lftype1,each=300)
+LCU30<-data.frame(size=LCU$V4[c(1:600)],lacunarity=LCU$V6[c(1:600)],type=lftype1)
+
+lftype2<-c("Land use patches","Functional district patches")
+lftype2<-rep(lftype2,each=20)
+LCU500<-data.frame(size=LCU$V4[c(601:640)],lacunarity=LCU$V6[c(601:640)],type=lftype2)
+
+ggthemr("fresh")
+
+LCUplot<-rbind(LCU30,LCU500)
+
+cpx1<-2.489
+cpy1<--0.2597244*cpx1+0.0611177*cpx1^2-0.0081856*cpx1^3+1.1797186
+cpx2<-3.080
+cpy2<--0.4223577*cpx2+0.0943508*cpx2^2-0.0102114*cpx2^3+1.4059355
+cpx3<-log(LCUplot[602,1])
+cpy3<-log(LCUplot[602,2])
+cpx4<-log(LCUplot[622,1])
+cpy4<-log(LCUplot[622,2])
+cpx1<-rep(cpx1,300)
+cpx2<-rep(cpx2,300)
+cpx3<-rep(cpx3,20)
+cpx4<-rep(cpx4,20)
+cpx<-c(cpx1,cpx2,cpx3,cpx4)
+cpy<-c(cpy1,cpy2,cpy3,cpy4)
+cptype<-c("Land use patches","Functional district patches")
+cptype<-rep(cptype,2)
+cpscale<-c("(a)","(b)")
+cpscale<-rep(cpscale,2)
+cpxy<-data.frame(cpx,cpy)
+cpxline<-data.frame(cpx,type=cptype,scale=cpscale)
+
+LCUplot<-rbind(LCU30,LCU500)
+scaleLCU<-c("(a)","(b)")
+scaleLCU<-rep(scaleLCU,each=600)
+scaleLCU<-scaleLCU[1:640]
+LCUplot<-data.frame(LCUplot,scale=scaleLCU)
+LCUplot<-data.frame(LCUplot,scale=scaleLCU,cpxy)
+
+p30<-ggplot(subset(LCU30, LCU30$type=="Functional district patches"))+geom_point(mapping=aes(x=log(size),y=log(lacunarity),colour=type,shape=type))+
+  geom_line(mapping=aes(x=log(size),y=log(lacunarity),colour=type))+
+  geom_vline(xintercept=cpx[1:2],color="red",linetype="dashed")+
+  ylim(0,1.5)+labs(x="ln(box size)/cell",y="ln(Lacunarity)",title="(a)")+
+  theme(legend.position="None",title=element_text(size=25,family="RT"),axis.text.y=element_text(size=25,family="RT"),
+        axis.text.x=element_text(size=25,family="RT"),axis.title=element_text(size=25,family="RT"),
+        strip.text=element_text(size=25,family="RT"))
+
+p500<-ggplot(subset(LCU500, LCU500$type=="Functional district patches"))+geom_point(mapping=aes(x=log(size),y=log(lacunarity),colour=type,shape=type))+
+  geom_line(mapping=aes(x=log(size),y=log(lacunarity),colour=type))+
+  geom_vline(xintercept=cpx[3:4],color="red",linetype="dashed")+
+  ylim(0,0.75)+labs(x="ln(box size)/cell",y="ln(Lacunarity)",title="(b)")+
+  theme(legend.position="Null",legend.title=element_text(size=25,family="RT"),
+        legend.text=element_text(size=25,family="RT"),legend.key.height=unit(1,"cm"),
+        title=element_text(size=25,family="RT"),axis.text.y=element_text(size=25,family="RT"),
+        axis.text.x=element_text(size=25,family="RT"),axis.title=element_text(size=25,family="RT"),
+        strip.text=element_text(size=25,family="RT"))
+scaleplot<-grid.arrange(p30,p500,nrow=1)
+```
+
+
+Download links as follow:
+
+[R 30 m](http://science.gisersqdai.top/DIB/LCU30.txt)
+[R 500 m](http://science.gisersqdai.top/DIB/LCU500.txt)
+
+## Landscape metrics
+Fragstats 4.2 software was used to calculate the number of patches (NP), patch density (PD), division (DIVISION) and effective mesh size (MESH) metrics.
+
+### 30 m resolution maps
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+NP30 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/planningfunction30/np.tif")
+PD30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/planningfunction30/pd.tif")
+DIVISION30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/planningfunction30/division.tif")
+MESH30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/planningfunction30/mesh.tif")
+
+m11 <- mapview(NP30, layer.name = "NP")
+m12 <- mapview(PD30, layer.name = "PD")
+m13 <- mapview(DIVISION30, layer.name = "DIVISION")
+m14 <- mapview(MESH30, layer.name = "MESH")
+sync(m11, m12, m13, m14)
+```
+
+Download links as follow:
+
+[NP](http://science.gisersqdai.top/DIB/np30.tif)
+
+[PD](http://science.gisersqdai.top/DIB/pd30.tif)
+
+[DIVISION](http://science.gisersqdai.top/DIB/division30.tif)
+
+[MESH](http://science.gisersqdai.top/DIB/mesh30.tif)
+
+### 500 m resolution maps
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+NP500 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/function500/np.tif")
+PD500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/function500/pd.tif")
+DIVISION500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/function500/division.tif")
+MESH500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/EcologicalIndex/multiplelandscape/function500/mesh.tif")
+
+m15 <- mapview(NP500, layer.name = "NP")
+m16 <- mapview(PD500, layer.name = "PD")
+m17 <- mapview(DIVISION500, layer.name = "DIVISION")
+m18 <- mapview(MESH500, layer.name = "MESH")
+sync(m15, m16, m17, m18)
+```
+
+Download links as follow:
+
+[NP](http://science.gisersqdai.top/DIB/np500.tif)
+
+[PD](http://science.gisersqdai.top/DIB/pd500.tif)
+
+[DIVISION](http://science.gisersqdai.top/DIB/division500.tif)
+
+[MESH](http://science.gisersqdai.top/DIB/mesh500.tif)
+
+## Impact factors of the $CO_2$ mitigation: PUA and POID
+
+### PUA
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+PUA30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Interaction/UrbanArea/PUA30.tif")
+PUA500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Interaction/UrbanArea/PUA500.tif")
+
+m19 <- mapview(PUA30*100, layer.name = "R 30 m/Percentage")
+m20 <- mapview(PUA500*100, layer.name = "R 500 m/Percentage")
+
+sync(m19, m20)
+```
+
+Download links as follow:
+
+[R 30 m](http://science.gisersqdai.top/DIB/PUA30.tif)
+
+[R 500 m](http://science.gisersqdai.top/DIB/PUA500.tif)
+
+### POID
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+POID30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/datashareuse/POID30.tif")
+POID500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/datashareuse/POID500.tif")
+
+m21 <- mapview(POID30, layer.name = "R 30 m")
+m22 <- mapview(POID500, layer.name = "R 500 m")
+
+sync(m21, m22)
+```
+
+
+Download links as follow:
+
+[R 30 m](http://science.gisersqdai.top/DIB/POID30.tif)
+
+[R 500 m](http://science.gisersqdai.top/DIB/POID500.tif)
+
+# Reference 
+If you used the data[@RN912; @ZUO2019118659], please cited as follow:
