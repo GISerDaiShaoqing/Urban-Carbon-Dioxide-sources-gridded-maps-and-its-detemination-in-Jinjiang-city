@@ -1,9 +1,9 @@
-# Mapping Urban Carbon Dioxide Sources in Jinjiang
+# Urban Carbon Dioxide sources gridded maps and its detemination in Jinjiang city
 
 Table of Contents
 =================
 
-* [Mapping Urban Carbon Dioxide Sources in Jinjiang](#mapping-urban-carbon-dioxide-sources-in-jinjiang)
+* [Urban Carbon Dioxide sources gridded maps and its detemination in Jinjiang city](#urban-carbon-dioxide-sources-gridded-maps-and-its-detemination-in-jinjiang-city)
   * [Introduction](#introduction)
   * [Open data set](#open-data-set)
   * [Citing](#citing)
@@ -32,11 +32,11 @@ If you find this data useful in your work, please consider citing:
 ```
 @dataset{shaoqing_dai_2019_3566073,
   author = {Shaoqing Dai, Shudi Zuo, Yin Ren},
-  title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city-0.2}},
+  title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city 0.3}},
   month = dec,
   year = 2019,
   publisher = {Zenodo},
-  version = {0.2},
+  version = {0.3},
   doi = {10.5281/zenodo.3566072},
   url = {https://doi.org/10.5281/zenodo.3566072}
 }
