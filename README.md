@@ -22,9 +22,9 @@ The data used to produce a recent publication in Journal of Cleaner Production (
 ## Open data set
 We built a spatial database Carbon Dioxide emissions and urban form fragmentation for the low carbon urban system in Jinjiang city, China. Detailed information can see in this [url](http://science.gisersqdai.top/DIB/DIBdata.html).
 
-![Carbon Dioxide emissions maps at 30 m](https://github.com/GISerDaiShaoqing/Mapping-Urban-Carbon-Dioxide-Sources-in-Jinjiang/blob/master/30m.png)
+![Carbon Dioxide emissions maps at 30 m](https://github.com/GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city/blob/master/30m.png)
 
-![Carbon Dioxide emissions maps at 500 m](https://github.com/GISerDaiShaoqing/Mapping-Urban-Carbon-Dioxide-Sources-in-Jinjiang/blob/master/500m.png)
+![Carbon Dioxide emissions maps at 500 m](https://github.com/GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city/blob/master/500m.png)
 
 ## Citing
 If you find this data useful in your work, please consider citing:
