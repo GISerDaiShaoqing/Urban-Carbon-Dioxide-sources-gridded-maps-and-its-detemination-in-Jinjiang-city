@@ -13,7 +13,7 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
 
 ## Introduction
 
-The data used to produce a recent publication in Journal of Cleaner Production (https://doi.org/10.1016/j.jclepro.2019.118659). You can download the data and use. Please contact me if you have question!
+The data was published in the [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274) and used to produce a recent publication in [Journal of Cleaner Production](https://doi.org/10.1016/j.jclepro.2019.118659). You can download the data and use. Please contact me if you have question!
 
 |Author|Shaoqing Dai|
 |---|---|
@@ -31,28 +31,38 @@ If you find this data useful in your work, please consider citing:
 
 ```
 @dataset{shaoqing_dai_2019_3566073,
-  author = {Shaoqing Dai, Shudi Zuo, Yin Ren},
-  title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city 0.3}},
-  month = dec,
-  year = 2019,
-  publisher = {Zenodo},
-  version = {0.3},
-  doi = {10.5281/zenodo.3566072},
-  url = {https://doi.org/10.5281/zenodo.3566072}
+   author = {Shaoqing Dai, Shudi Zuo, Yin Ren},
+   title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city 0.4}},
+   month = dec,
+   year = 2019,
+   publisher = {Zenodo},
+   version = {0.4},
+   doi = {10.5281/zenodo.3566072},
+   url = {https://doi.org/10.5281/zenodo.3566072}
 }
 ```
-
+```
+@article{DAI2020105274,
+   author = {Shaoqing Dai, Shudi Zuo, Yin Ren}，
+   title = {A spatial database of CO2 emissions, urban form fragmentation and city-scale effect related impact factors for the low carbon urban system in Jinjiang city, China},
+   journal = {Data in Brief},
+   volume = {29},
+   pages = {105274},
+   year = {2020},
+   doi = {https://doi.org/10.1016/j.dib.2020.105274}
+}
+```
 ```
 @article{ZUO2019118659,  
    author = {Shudi Zuo, Shaoqing Dai, Yin Ren},   
    title = {More fragmentized urban form more CO2 emissions? A comprehensive relationship from the combination analysis across different scales},   
-   journal = {Journal of Cleaner Production},   
+   journal = {Journal of Cleaner Production}, 
+   volume = {244},   
    pages = {118659},   
-   year = {2019},
+   year = {2020},
    doi = {10.1016/j.jclepro.2019.118659}
 }
 ```
-
 ```
 @inproceedings{Dai2018sacp,  
    title={High-resolution mapping of direct CO_2 emissions and uncertainties at the urban scale},

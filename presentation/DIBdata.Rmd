@@ -17,6 +17,8 @@ A spatial database of low carbon urban system represented the spatial distributi
 
 The names ofcorresponding spatial data of Geotiff files given in the [ReadMe.txt](http://science.gisersqdai.top/DIB/DataDescription.txt).
 
+The data was published in [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274).
+
 # Database
 
 ## Spatial distribution maps of $CO_2$ emissions
@@ -263,4 +265,4 @@ Download links as follow:
 [R 500 m](http://science.gisersqdai.top/DIB/POID500.tif)
 
 # Reference 
-If you used the data[@RN912; @ZUO2019118659], please cited as follow:
+If you used the data[@RN912; @ZUO2019118659; @DAI2020105274; @shaoqing_dai_2019_3566073], please cited as follow:
