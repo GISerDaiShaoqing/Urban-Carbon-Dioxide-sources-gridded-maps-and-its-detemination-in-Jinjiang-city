@@ -13,7 +13,7 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
 
 ## Introduction
 
-The open datasets published in the [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274). They were used to analyzed in two published papers in [Journal of Cleaner Production](https://doi.org/10.1016/j.jclepro.2019.118659) and [Remote Sensing](https://www.mdpi.com/2072-4292/12/23/3932). You can download the data and use. Please contact me if you have question!
+The open datasets published in the [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274). We used them to analyze the carbon dioxide emissions-related problem in two published papers in [Journal of Cleaner Production](https://doi.org/10.1016/j.jclepro.2019.118659) and [Remote Sensing](https://www.mdpi.com/2072-4292/12/23/3932). You can download the data and use. Please contact me if you have question!
 
 |Author|Shaoqing Dai|
 |---|---|
