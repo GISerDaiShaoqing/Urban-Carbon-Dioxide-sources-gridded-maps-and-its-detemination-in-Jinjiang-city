@@ -1,7 +1,8 @@
 ---
 title: A spatial database of $CO_2$ emissions and urban form fragmentation for the
   low carbon urban system in Jinjiang city, China
-csl: chinese-gb7714-1987-numeric.csl
+author: "[Shaoqing Dai](http://gisersqdai.top/mycv/), Shudi Zuo, Yin Ren"
+csl: ehp.csl
 output:
   html_document:
     df_print: paged
@@ -11,15 +12,37 @@ output:
 bibliography: CEMU.bib
 ---
 
-# Introduction
 
-A spatial database of low carbon urban system represented the spatial distribution maps of $CO_2$ emissions, urban form metrics (urban landscape fragmentation), proportion of urban area (PUA) and points of interest density (POID) at two resolutions: 30 m ($R_{30m}$) and 500 m ($R_{500m}$) in Jinjiang city, China. The data were produced from ArcGIS 10.2, Apack 2.23, Fragstats 4.2 and R 3.5.3. All the data were stored in Geotiff format.
 
-The names ofcorresponding spatial data of Geotiff files given in the [ReadMe.txt](http://science.gisersqdai.top/DIB/DataDescription.txt).
+# Brief
 
-The data was published in [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274).
+A spatial database of low carbon urban system represented the spatial distribution maps of $CO_2$ emissions, urban form metrics (urban landscape fragmentation), proportion of urban area (PUA) and points of interest density (POID) at two resolutions: 30 m ($R_{30m}$) and 500 m ($R_{500m}$) in Jinjiang city, China. The data were produced by ArcGIS 10.2, Apack 2.23, Fragstats 4.2 and R 3.5.3. All the data were stored in Geotiff format.
 
-# Database
+The names of corresponding data were given in the [ReadMe.txt](http://science.gisersqdai.top/DIB/DataDescription.txt).
+
+The data published in [Data in Brief](https://doi.org/10.1016/j.dib.2020.105274).
+
+[Github](https://github.com/GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city)
+
+# Open datasets
+
+## Total emission estimation
+"Total", "Resident", "Industry" and "Transport" represent the total-, resident-, industrial-, and transport- $CO_2$ emissions in Jinjiang City respectively. 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+cepopalluseghg <- 2596088.162
+ceindustryalluseghg <- 13729257.32
+cetransalluseghg <- 298076.991
+
+datace <- data.frame(sector = c("Residential", "Industry", "Transport"), emission = c(2596088.162, 13729257.32,
+                                                                                      298076.991))
+
+p <- plot_ly(datace, labels = ~sector, values = ~emission, type = 'pie')%>%
+   layout(title = 'Emissions from different sectors in 2013',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+p
+```
 
 ## Spatial distribution maps of $CO_2$ emissions
 ### 30 m resolution maps
@@ -33,10 +56,10 @@ COI30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty
 COT30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COT30.tif")
 CO30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/CO30.tif")
 
-m1 <- mapview(CO30, layer.name = "Total")
-m2 <- mapview(COP30, layer.name = "Resident")
-m3 <- mapview(COI30, layer.name = "Industry")
-m4 <- mapview(COT30, layer.name = "Transport")
+m1 <- mapview(CO30, layer.name = "Total (t)")
+m2 <- mapview(COP30, layer.name = "Resident (t)")
+m3 <- mapview(COI30, layer.name = "Industry (t)")
+m4 <- mapview(COT30, layer.name = "Transport (t)")
 sync(m1, m2, m3, m4)
 ```
 
@@ -60,10 +83,10 @@ COI500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertaint
 COT500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/COT500.tif")
 CO500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Uncertainty/Mapping/CO500.tif")
 
-m5 <- mapview(CO500, layer.name = "Total")
-m6 <- mapview(COP500, layer.name = "Resident")
-m7 <- mapview(COI500, layer.name = "Industry")
-m8 <- mapview(COT500, layer.name = "Transport")
+m5 <- mapview(CO500, layer.name = "Total (t)")
+m6 <- mapview(COP500, layer.name = "Resident (t)")
+m7 <- mapview(COI500, layer.name = "Industry (t)")
+m8 <- mapview(COT500, layer.name = "Transport (t)")
 
 sync(m5, m6, m7, m8)
 ```
@@ -86,8 +109,8 @@ Download links as follow:
 fcmix30 <-  raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/mixed/planningfunctionmix.tif")
 fcmix500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/mixed/functionmix500m.tif")
 
-m9 <- mapview(fcmix30*100, layer.name = "R 30 m/percentage")
-m10 <- mapview(fcmix500*100, layer.name = "R 500 m/percentage")
+m9 <- mapview(fcmix30*100, layer.name = "R 30 m (%)")
+m10 <- mapview(fcmix500*100, layer.name = "R 500 m (%)")
 
 sync(m9, m10)
 ```
@@ -233,8 +256,8 @@ Download links as follow:
 PUA30 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Interaction/UrbanArea/PUA30.tif")
 PUA500 <- raster("F:/GISproject/IUE/CarbonEmission/Final/SecondResult/Interaction/UrbanArea/PUA500.tif")
 
-m19 <- mapview(PUA30*100, layer.name = "R 30 m/Percentage")
-m20 <- mapview(PUA500*100, layer.name = "R 500 m/Percentage")
+m19 <- mapview(PUA30*100, layer.name = "R 30 m (%)")
+m20 <- mapview(PUA500*100, layer.name = "R 500 m (%)")
 
 sync(m19, m20)
 ```
@@ -265,4 +288,4 @@ Download links as follow:
 [R 500 m](http://science.gisersqdai.top/DIB/POID500.tif)
 
 # Reference 
-If you used the data[@RN912; @ZUO2019118659; @DAI2020105274; @shaoqing_dai_2019_3566073], please cited as follow:
+If you used the data[@rs12233932; @Dai2018sacp; @ZUO2019118659; @DAI2020105274; @shaoqing_dai_2019_3566073], please cited as follow:
