@@ -20,7 +20,7 @@ The open dataset published in the [Data in Brief](https://doi.org/10.1016/j.dib.
 |E-mail|dsq1993qingge@163.com|
 
 ## Open dataset
-We built a spatial database Carbon Dioxide emissions and urban form fragmentation for the low carbon urban system in Jinjiang city, China. Detailed information can see in this [url](http://science.gisersqdai.top/DIB/DIBdata.html).
+We built a spatial database Carbon Dioxide emissions and urban form fragmentation for the low carbon urban system in Jinjiang city, China. Detailed information can see in this [url](http://science.gisersqdai.top/DIB/DIBdata.nb.html).
 
 ![Carbon Dioxide emissions maps at 30 m](https://github.com/GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city/blob/master/30m.png)
 
