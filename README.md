@@ -5,7 +5,7 @@ Table of Contents
 
 * [Urban Carbon Dioxide sources gridded maps and its detemination in Jinjiang city](#urban-carbon-dioxide-sources-gridded-maps-and-its-detemination-in-jinjiang-city)
   * [Introduction](#introduction)
-  * [Open data set](#open-data-set)
+  * [Open dataset](#open-dataset)
   * [Citing](#citing)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
