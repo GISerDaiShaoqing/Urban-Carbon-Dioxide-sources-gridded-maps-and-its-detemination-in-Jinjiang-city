@@ -7,8 +7,9 @@ output:
   html_document:
     df_print: paged
     toc: yes
-  html_notebook:
-    toc: yes
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
 bibliography: CEMU.bib
 ---
 
@@ -286,6 +287,12 @@ Download links as follow:
 [R 30 m](http://science.gisersqdai.top/DIB/POID30.tif)
 
 [R 500 m](http://science.gisersqdai.top/DIB/POID500.tif)
+
+## Uncertainty
+
+We also assessed the uncertainty of Spatial distribution maps of $CO_2$ emissions, detailed information could see the [published paper](https://www.mdpi.com/2072-4292/12/23/3932) and [website](http://science.gisersqdai.top/RSunco2/rsbrief.html).
+
+
 
 # Reference 
 If you used the data[@rs12233932; @Dai2018sacp; @ZUO2019118659; @DAI2020105274; @shaoqing_dai_2019_3566073], please cited as follow:

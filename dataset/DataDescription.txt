@@ -23,3 +23,15 @@ fcmix30.tif:      The mixing degree of urban functional district (UFD) at 30 m
 fcmix500.tif:     The mixing degree of urban functional district (UFD) at 500 m
 LCU30.txt:        The Lacunarity indices at 30 m
 LCU500.txt:       The Lacunarity indices at 500 m
+U1_30_total.tif:  The propagated uncertainty of total Carbon Dioxide emissions gridded map at 30 m caused by gridded model
+U1_30_res.tif:    The propagated uncertainty of residential Carbon Dioxide emissions gridded map at 30 m caused by gridded model
+U1_30_ind.tif:    The propagated uncertainty of industrial Carbon Dioxide emissions gridded map at 30 m caused by gridded model
+U1_30_trans.tif:  The propagated uncertainty of transport Carbon Dioxide emissions gridded map at 30 m caused by gridded model
+U1_500_total.tif: The propagated uncertainty of total Carbon Dioxide emissions gridded map at 500 m caused by gridded model
+U1_500_res.tif:   The propagated uncertainty of residential Carbon Dioxide emissions gridded map at 500 m caused by gridded model
+U1_500_ind.tif:   The propagated uncertainty of industrial Carbon Dioxide emissions gridded map at 500 m caused by gridded model
+U1_500_trans.tif: The propagated uncertainty of transport Carbon Dioxide emissions gridded map at 500 m caused by gridded model
+U3_30.tif:        The propagated uncertainty of total Carbon Dioxide emissions gridded map at 30 m caused by model input(total emissions estimation, activity levels)
+U3_500.tif:       The propagated uncertainty of total Carbon Dioxide emissions gridded map at 500 m caused by model input(total emissions estimation, activity levels)
+U4_30.tif:        The propagated uncertainty of total Carbon Dioxide emissions gridded map at 30 m caused by model input(spatial proxies)
+U4_500.tif:       The propagated uncertainty of total Carbon Dioxide emissions gridded map at 500 m caused by model input(spatial proxies)

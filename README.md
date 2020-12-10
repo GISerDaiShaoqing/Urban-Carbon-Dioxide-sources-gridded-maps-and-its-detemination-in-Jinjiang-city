@@ -20,7 +20,7 @@ The open datasets published in the [Data in Brief](https://doi.org/10.1016/j.dib
 |E-mail|dsq1993qingge@163.com|
 
 ## Open datasets
-We built a spatial database Carbon Dioxide emissions and urban form fragmentation for the low carbon urban system in Jinjiang city, China. Detailed information can see in this [url](http://science.gisersqdai.top/DIB/DIBdata.nb.html).
+We built a spatial database Carbon Dioxide emissions and urban form fragmentation for the low carbon urban system in Jinjiang city, China. Detailed information can see in this [url](http://science.gisersqdai.top/DIB/DIBdata.html).
 
 ![Carbon Dioxide emissions maps at 30 m](https://github.com/GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city/blob/master/30m.png)
 
@@ -32,11 +32,11 @@ If you find this data useful in your work, please consider citing:
 ```
 @dataset{shaoqing_dai_2019_3566073,
    author = {Shaoqing Dai, Shudi Zuo, Yin Ren},
-   title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city 0.4}},
+   title = {{GISerDaiShaoqing/Urban-Carbon-Dioxide-sources-gridded-maps-and-its-detemination-in-Jinjiang-city 0.6}},
    month = Feb,
    year = 2020,
    publisher = {Zenodo},
-   version = {0.5},
+   version = {0.6},
    doi = {10.5281/zenodo.3566072},
    url = {https://doi.org/10.5281/zenodo.3566072}
 }
@@ -65,7 +65,7 @@ If you find this data useful in your work, please consider citing:
 ```
 ```
 @inproceedings{Dai2018sacp,  
-   title={High-resolution mapping of direct CO_2 emissions and uncertainties at the urban scale},
+   title={High-resolution mapping of direct CO2 emissions and uncertainties at the urban scale},
    author={Shaoqing Dai, Shudi Zuo, Yin Ren},
    booktitle={Proceedings of Spatial Accuracy 2018},
    year={2018},
@@ -76,7 +76,7 @@ If you find this data useful in your work, please consider citing:
 ```
 @article{rs12233932,
   author = {Shaoqing Dai and Yin Ren and Shudi Zuo and Chengyi Lai and Jiajia Li and Shengyu Xie and Bingchu Chen},
-  title = {Investigating the Uncertainties Propagation Analysis of $CO_2$ Emissions Gridded Maps at the Urban Scale: A Case Study of Jinjiang City, China},
+  title = {Investigating the Uncertainties Propagation Analysis of CO2 Emissions Gridded Maps at the Urban Scale: A Case Study of Jinjiang City, China},
   journal = {Remote Sensing},
   volume = {12},
   number = {23},
